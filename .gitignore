@@ -1,0 +1,36 @@
+# ==========================
+# Python
+# ==========================
+backend/venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+
+# ML Models
+*.pkl
+*.joblib
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Python build files
+build/
+dist/
+*.egg-info/
