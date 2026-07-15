@@ -1,3 +1,10 @@
+import {
+  CloudRain,
+  Sun,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
+
 function PredictionResult({ result }) {
   if (!result) return null;
 
@@ -5,39 +12,70 @@ function PredictionResult({ result }) {
 
   return (
     <div
-      className={`mt-8 rounded-2xl shadow-lg p-6 border-l-8 ${
+      className={`mt-8 rounded-3xl shadow-2xl p-8 border ${
         isRain
-          ? "bg-green-50 border-green-500"
-          : "bg-yellow-50 border-yellow-500"
+          ? "bg-green-50 border-green-200"
+          : "bg-yellow-50 border-yellow-200"
       }`}
     >
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">
-        Prediction Result
-      </h2>
+      <div className="flex items-center gap-3 mb-6">
+        {isRain ? (
+          <CloudRain
+            className="text-green-600"
+            size={42}
+          />
+        ) : (
+          <Sun
+            className="text-yellow-500"
+            size={42}
+          />
+        )}
 
-      <div className="space-y-3">
-        <p className="text-lg">
-          <span className="font-semibold">Prediction:</span>{" "}
+        <h2 className="text-3xl font-bold text-gray-800">
+          Prediction Result
+        </h2>
+      </div>
+
+      <div className="space-y-5">
+
+        <div className="flex items-center justify-between bg-white rounded-xl p-4 shadow-sm">
+          <span className="font-semibold text-gray-600">
+            Prediction
+          </span>
+
           {isRain ? (
-            <span className="text-green-700 font-bold">
-              🌧 Rain Expected
+            <span className="flex items-center gap-2 text-green-700 font-bold">
+              <CheckCircle size={22} />
+              Rain Expected
             </span>
           ) : (
-            <span className="text-yellow-700 font-bold">
-              ☀ No Rain Expected
+            <span className="flex items-center gap-2 text-yellow-700 font-bold">
+              <XCircle size={22} />
+              No Rain Expected
             </span>
           )}
-        </p>
+        </div>
 
-        <p className="text-gray-600">
-          <span className="font-semibold">Prediction Value:</span>{" "}
-          {result.prediction}
-        </p>
+        <div className="flex items-center justify-between bg-white rounded-xl p-4 shadow-sm">
+          <span className="font-semibold text-gray-600">
+            Prediction Value
+          </span>
 
-        <p className="text-gray-600">
-          <span className="font-semibold">Message:</span>{" "}
-          {result.message}
-        </p>
+          <span className="text-lg font-bold text-blue-600">
+            {result.prediction}
+          </span>
+        </div>
+
+        <div className="flex items-center justify-between bg-white rounded-xl p-4 shadow-sm">
+          <span className="font-semibold text-gray-600">
+            API Message
+          </span>
+
+          <span className="font-medium text-gray-800">
+            {result.message}
+          </span>
+        </div>
+
       </div>
     </div>
   );

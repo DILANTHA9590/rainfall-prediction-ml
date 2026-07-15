@@ -2,15 +2,18 @@ import { CloudRain } from "lucide-react";
 
 function Header() {
   return (
-    <header className="flex flex-col items-center mb-8">
-      <CloudRain size={60} className="text-blue-600 mb-3" />
+    <header className="flex flex-col items-center mb-8 text-center">
+      <CloudRain
+        size={64}
+        className="text-sky-300 drop-shadow-lg mb-4"
+      />
 
-      <h1 className="text-4xl font-bold text-gray-800">
+      <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">
         Rainfall Prediction System
       </h1>
 
-      <p className="text-gray-500 mt-2">
-        Predict rainfall using a trained Random Forest model
+      <p className="mt-3 text-lg text-gray-100 drop-shadow-md">
+        Predict rainfall using a trained Random Forest Machine Learning model
       </p>
     </header>
   );
