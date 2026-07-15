@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import PredictionForm from "../components/PredictionForm";
 import PredictionResult from "../components/PredictionResult";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function Home() {
 
@@ -11,14 +13,14 @@ function Home() {
     <div className="min-h-screen bg-gray-100 flex justify-center items-center p-6">
 
       <div className="w-full max-w-5xl">
+        <Header/>
 
-        <h1 className="text-4xl font-bold text-center mb-8">
-          🌧 Rainfall Prediction System
-        </h1>
+   
 
         <PredictionForm setResult={setResult} />
 
         <PredictionResult result={result} />
+         <Footer />
 
       </div>
 

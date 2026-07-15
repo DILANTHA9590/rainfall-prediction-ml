@@ -60,7 +60,7 @@ const handleSubmit = async (e) => {
 
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6 overflow-hidden">
+    <div className=" bg-gray-100 flex items-center justify-center p-6 overflow-hidden">
       <div className="w-full max-w-5xl bg-white rounded-2xl shadow-xl p-8">
 
         <h2 className="text-3xl font-bold text-center text-blue-700 mb-8">
